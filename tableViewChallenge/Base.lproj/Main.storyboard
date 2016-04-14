@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tableViewChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Hcm-1l-ajq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hcm-1l-ajq" secondAttribute="height" multiplier="200:31" id="hKo-E7-x4j"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-T1-QXL">
+                                <rect key="frame" x="20" y="113" width="560" height="479"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.52156862749999999" green="0.45882352939999999" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kB4-Q9-M1g"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JNh-DW-1SC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hcm-1l-ajq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1GD-Dy-zXF"/>
+                            <constraint firstItem="hAe-T1-QXL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IIS-FA-cI2"/>
+                            <constraint firstItem="Hcm-1l-ajq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="K1h-hK-D5e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hAe-T1-QXL" secondAttribute="bottom" constant="8" id="N9d-HJ-kWL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hcm-1l-ajq" secondAttribute="trailing" constant="-20" id="SX8-CT-RuI"/>
+                            <constraint firstItem="Hcm-1l-ajq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ZcB-W4-fyG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hcm-1l-ajq" secondAttribute="trailing" constant="-20" id="dh2-42-ITF"/>
+                            <constraint firstItem="hAe-T1-QXL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eEr-ZG-qfP"/>
+                            <constraint firstItem="hAe-T1-QXL" firstAttribute="top" secondItem="Hcm-1l-ajq" secondAttribute="bottom" constant="20" id="whH-eV-LB6">
+                                <variation key="heightClass=compact-widthClass=regular" constant="31"/>
+                            </constraint>
+                            <constraint firstItem="Hcm-1l-ajq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="xWV-kU-ajA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="528.75" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banner" width="736" height="177"/>
+    </resources>
 </document>
